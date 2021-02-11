@@ -41,6 +41,8 @@ class TodoAdapter(private val todos: MutableList<Todo>) :
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
+
+        // with returns kotlin.Unit
         with(holder) {
             val currentTodo = todos[position]
             binding.tvTodoTitle.text = currentTodo.title
@@ -51,6 +53,8 @@ class TodoAdapter(private val todos: MutableList<Todo>) :
                 currentTodo.isChecked = !currentTodo.isChecked
             }
         }
+
+        // apply returns I/System.out: TodoViewHolder{3858023 position=0 id=-1, oldPos=-1, pLpos:-1 no parent}
 //        holder.apply {
 //            val currentTodo = todos[position]
 //            binding.tvTodoTitle.text = currentTodo.title
